@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Camping Management App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Mukta:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+
+  <div class="header">
+    <h1>Buying and selling application</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="camping.html" class="">Camping Management App</a></li>
+        <li><a href="buysell.html"class="active">Buying and selling application</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main class="carousel-container">
+    <div class="carousel">
+      <div class="item active">
+        <h1>Objetives</h1><br>
+        <p>This innovative app redefines the buying and selling experience for video games and movies within a secure and user-friendly platform. 
+          Built on ServiceNow, it offers a vast selection of entertainment options, facilitating seamless transactions and promoting a vibrant community of enthusiasts. 
+          Features include an intuitive interface, secure payment systems, peer reviews, personalized recommendations, and easy listing tools for sellers.
+           Designed to integrate effortlessly into the ServiceNow ecosystem,
+            this marketplace not only supports sustainable entertainment practices by giving games and movies a second life but also provides an engaging platform for users to connect 
+            and share their passions.
+          </p>
+      </div>
+      <div class="item">
+        <h1>Technologies</h1>
+        <p>-<u>ServiceNow:</u> as Aplication as a Service</p>
+        <p>-<u>ServiceNow Framework</u> all the tools that ServiceNow provides to customize the user Experience like Business Rules, Service Catalog, UI Policies....</p>
+      </div>
+      <div class="item">
+        <h1>Some Screenshots</h1>
+        <div class="slider">
+          <div class="slide">
+              <img src="imagenes/aplicationavigator.png" alt="Imagen 1">
+              
+          </div>
+          <div class="slide">
+              <img src="imagenes/InventoryLISTSN.png" alt="Imagen 2">
+          </div>
+          <div class="slide">
+              <img src="imagenes/newRecordForm.png" alt="Imagen 3">
+          </div>
+          <div class="slide">
+              <img src="imagenes/ServicePortal.png" alt="Imagen 4">
+          </div>
+          <div class="slide">
+              <img src="imagenes/PostServicePortal.png" alt="Imagen 5">
+          </div>
+          <div class="slide">
+              <img src="imagenes/RequestServicePortal.png" alt="Imagen 6">
+          </div>
+          <div class="slide">
+            <img src="imagenes/WorkflowSN.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+          <img src="imagenes/ServiceNow.jpg" alt="Imagen 1">
+        </div>
+      </div>
+    </div>
+    <div class="button-and-dots-container">
+      <button class="prev">Anterior</button>
+      <div class="dots"></div> <!-- Quita los puntos del HTML -->
+      <button class="next">Siguiente</button>
+    </div>
+    
+    
+    
+    
+  </main>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  let carousel = document.querySelector(".carousel");
+  let items = carousel.querySelectorAll(".item");
+  let dotsContainer = document.querySelector(".dots");
+
+  // Insert dots into the DOM
+  items.forEach((_, index) => {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+
+  let dots = document.querySelectorAll(".dot");
+
+  // Function to show a specific item
+  function showItem(index) {
+    items.forEach((item, idx) => {
+      item.classList.remove("active");
+      dots[idx].classList.remove("active");
+      if (idx === index) {
+        item.classList.add("active");
+        dots[idx].classList.add("active");
+      }
+    });
+  }
+
+  // Event listeners for buttons
+  document.querySelector(".prev").addEventListener("click", () => {
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index - 1 + items.length) % items.length);
+  });
+
+  document.querySelector(".next").addEventListener("click", () => {
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index + 1) % items.length);
+  });
+
+  // Event listeners for dots
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      let index = parseInt(dot.dataset.index);
+      showItem(index);
+    });
+  });
+});
+      const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+  </script>
+  
+  
+
+  <div class="footer">
+    <p>&copy; 2024 por David. L</p>
+  </div>
+  
+
+  
+  
+
+</body>
+</html>

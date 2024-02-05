@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Camping Management App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Mukta:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+
+  <div class="header">
+    <h1>Camping Management App</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="camping.html" class="active">Camping Management App</a></li>
+        <li><a href="buysell.html">Buying and selling application</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main class="carousel-container">
+    <div class="carousel">
+      <div class="item active">
+        <h1>Objetives</h1><br>
+        <p>The present undergraduate thesis introduces CampAnalytics, a digital solution for camp management. The platform focuses on digitizing and streamlining inventory management, camper management, monitoring team management, and game suggestions based on the weather.
+          To achieve this, an online application has been developed, allowing users to have a complete overview of all relevant aspects of the camp, from space reservations to activity planning and resource management.
+          Through the application, camp managers will be able to access detailed information about available inventory, the number of campers and monitors, as well as recommendations for activities and games that are suitable for current weather conditions.<br><br>
+          The mobile app CampAnalytics is justified by the need to improve the management and optimization of camps, addressing challenges such as attendance management, activity planning, and inventory management. By providing an efficient digital platform for camp management,
+           CampAnalytics enhances the experience for counselors and enables organizers to carry out management processes more effectively and efficiently.
+          </p>
+      </div>
+      <div class="item">
+        <h1>Technologies</h1>
+        <p>-<u>Kotlin:</u> as programming language</p>
+        <p>-<u>Android Studio IDE:</u> as IDE</p>
+        <p>-<u>SQL Server:</u> as Database hosting</p>
+        <p>-<u>JTDS Driver:</u> as a connection between SQL Server and the application</p>
+        <p>-<u>Android Studio ORM:</u> used to help with the mapping</p>
+
+      </div>
+      <div class="item">
+        <h1>Some Screenshots</h1>
+        <div class="slider">
+          <div class="slide">
+              <img src="imagenes/Games.png" alt="Imagen 1">
+              
+          </div>
+          <div class="slide">
+              <img src="imagenes/MainScreen.png" alt="Imagen 2">
+          </div>
+          <div class="slide">
+              <img src="imagenes/Interfaces.png" alt="Imagen 3">
+          </div>
+          <div class="slide">
+              <img src="imagenes/InventoryList.png" alt="Imagen 4">
+          </div>
+          <div class="slide">
+              <img src="imagenes/Listas.png" alt="Imagen 5">
+          </div>
+          <div class="slide">
+              <img src="imagenes/Login.png" alt="Imagen 6">
+          </div>
+          <div class="slide">
+            <img src="imagenes/casosDeUsos.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+          <img src="imagenes/NewChild.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+          <img src="imagenes/NewMonitor.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+          <img src="imagenes/SlideIzquierda.png" alt="Imagen 1">
+        </div>
+        <div class="slide">
+          <img src="imagenes/TeamsList.png" alt="Imagen 1">
+        </div>
+      </div>
+    </div>
+    <div class="button-and-dots-container">
+      <button class="prev">Anterior</button>
+      <div class="dots"></div> <!-- Quita los puntos del HTML -->
+      <button class="next">Siguiente</button>
+    </div>
+    
+    
+    
+    
+  </main>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  let carousel = document.querySelector(".carousel");
+  let items = carousel.querySelectorAll(".item");
+  let dotsContainer = document.querySelector(".dots");
+
+  // Insert dots into the DOM
+  items.forEach((_, index) => {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+
+  let dots = document.querySelectorAll(".dot");
+
+  // Function to show a specific item
+  function showItem(index) {
+    items.forEach((item, idx) => {
+      item.classList.remove("active");
+      dots[idx].classList.remove("active");
+      if (idx === index) {
+        item.classList.add("active");
+        dots[idx].classList.add("active");
+      }
+    });
+  }
+
+  // Event listeners for buttons
+  document.querySelector(".prev").addEventListener("click", () => {
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index - 1 + items.length) % items.length);
+  });
+
+  document.querySelector(".next").addEventListener("click", () => {
+    let index = [...items].findIndex((item) =>
+      item.classList.contains("active")
+    );
+    showItem((index + 1) % items.length);
+  });
+
+  // Event listeners for dots
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      let index = parseInt(dot.dataset.index);
+      showItem(index);
+    });
+  });
+});
+      const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+  </script>
+  
+  
+
+  <div class="footer">
+    <p>&copy; 2024 por David. L</p>
+  </div>
+  
+
+  
+  
+
+</body>
+</html>

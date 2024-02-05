@@ -1,0 +1,334 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 20px;
+    width: 100%; /* Ancho completo */
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el banner permanezca en la parte superior */
+    padding-right: 20px;
+}
+
+.nombre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px; /* Agrega espacio alrededor del nombre */
+    font-family: 'Sofia';
+    cursor: pointer;
+}
+
+
+.botones button {
+    background-color: #222; /* Color de fondo de los botones similar al del banner */
+    color: #fff; /* Color del texto de los botones */
+    border: 1px solid #444; /* Borde sutil */
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: 'Mukta', sans-serif ;
+    
+}
+
+.botones button:hover {
+    background-color: #756f6f; /* Color al pasar el ratón sobre los botones */
+}
+
+.content {
+    min-height: 100vh; /* Asegura que el contenido cubra toda la pantalla */
+    background-image: url('imagenes/fondo.png'); /* Aplica el fondo aquí */
+    background-size: cover; /* Cubre todo el espacio disponible */
+    /* Resto de tus estilos para 'content' */
+}
+
+.presentation {
+    color: aliceblue;
+    text-shadow: 0 0 8px #2e2929;
+    font-weight: bold;
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    top: 40%;
+    left: 56%;
+    margin: -50px 0 0 -50px;
+    font-size: 600%;
+    font-family: 'Mukta', sans-serif;
+    
+ }
+ .presentation2 {
+    color: aliceblue;
+    position: absolute;
+    top: calc(40% + 8%); /* Ajusta la posición según tus necesidades */
+    left: 53%; /* Puedes ajustar la posición horizontal si es necesario */
+    width: 50%;
+    height: fit-content;
+    font-size: 600%; /* Tamaño de fuente de ejemplo */
+    font-family: 'Mukta', sans-serif;
+  }
+  .aboutMe {
+    background-image: url('imagenes/fondoAboutMe.png');
+    background-color: #0a041f; /* O el color de fondo que prefieras */
+    min-height: 80vh;
+    padding: 50px;
+    font-size: 18px; 
+}
+.aboutTitle{
+    color: #add8e6;
+    text-shadow: 0 0 8px #ffffff;
+    font-weight: bold;
+    position: relative;
+    top: calc(50%); /* Ajusta la posición según tus necesidades */
+    left: 40%; /* Puedes ajustar la posición horizontal si es necesario */
+    width: 50%;
+    height: fit-content;
+    font-size: 600%; /* Tamaño de fuente de ejemplo */
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 5%;
+}
+.description{
+    color: rgb(208, 228, 245);
+    position: relative;
+    top: 100%; /* Ajusta la posición según tus necesidades */
+    left: 10%; /* Puedes ajustar la posición horizontal si es necesario */
+    width: 80%;
+    height: fit-content;
+    font-size: 100%; /* Tamaño de fuente de ejemplo */
+    font-family: 'Mukta', sans-serif;
+}
+.about-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.dropdown {
+    display: inline-block;
+    margin-right: 60px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #131212;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Enlaces dentro del menú desplegable */
+.dropdown-content a {
+    color: whitesmoke;
+    border-color: aliceblue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Muestra el menú al pasar el ratón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Cambia el color de fondo de los enlaces al pasar el ratón */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+.experience{
+    background-image: url('imagenes/fondoExperience.png');
+    min-height: 85vh;
+    padding: 50px;
+}
+.contenedor {
+    position: relative;
+    width: 70%;
+    height: 80vh;
+    left: 15%;
+    border-radius: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.reducir .title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, 0%) rotate(90deg);
+    transform-origin: bottom right;
+    font-size: 1.5em; /* Ajusta según tus necesidades */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+}
+.div {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Mukta', sans-serif;
+    font-size: larger;
+    margin-top: 2%;
+    color: #add8e6;
+    text-shadow: 0 0 4px #ffffff;
+    font-weight: bold;
+    border-radius: 2%;
+    flex: 1; /* Todos los divs ocupan el mismo espacio inicialmente */
+    border: 2px solid white; /* Define el ancho y el estilo */
+    box-shadow: inset 0 0 5px blue, 0 0 10px blue;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: flex 0.3s; /* Hace que el cambio de tamaño sea suave */
+    cursor: pointer;
+}
+.ampliar {
+    flex: 4;
+    font-size: 50px;
+    text-align: center;
+}
+.reducir{
+    flex:1;
+    font-size: medium;
+    transition: all 0.3s ease; /* Suave transición para todas las propiedades */
+    border-color: #555; /* Nuevo color de borde más suave */
+    box-shadow: 0 0 10px #555; /* Sombra más suave */
+}
+.hideContent {
+    display: none;
+}
+.div > div:first-child {
+    position: relative;
+    text-align: left;
+    font-size: medium;
+    color: #dcdcdc;
+    text-shadow: 0 0 0px #ffffff;
+    border-radius: 3px;
+    margin-top: 5%;
+    margin-bottom: 30%;
+    margin-left: 4%;
+    width: 90%;
+    height: 85%;
+    bottom: 10px; 
+    margin-right: 10px;
+    font-size: 18px;
+    
+}
+.slider_frame {
+    overflow: hidden;
+    margin: 10px auto 0;
+    width: 600px;
+}
+
+.slider_frame ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 600%; 
+    animation: slide 30s infinite ease-in-out;
+}
+
+.slider_frame li {
+    list-style: none;
+    width: 16.66%;
+}
+
+.slider_frame img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0%, 12.5% { transform: translateX(0%); }
+    16.66%, 29.16% { transform: translateX(-16.66%); }
+    33.32%, 45.82% { transform: translateX(-33.32%); }
+    49.98%, 62.48% { transform: translateX(-49.98%); }
+    66.64%, 79.14% { transform: translateX(-66.64%); }
+    83.3%, 95.8% { transform: translateX(-83.3%); }
+    100% { transform: translateX(-83.3%); }
+}
+.Projects {
+    background-image: url('imagenes/fondoAboutMe.png');
+    background-color: #0a041f; /* O el color de fondo que prefieras */
+    min-height: 100vh;
+    padding: 50px;
+    font-size: 18px; 
+}
+.project-card {
+    flex-basis: 300px;
+    border: 1px solid #00ffff; /* Borde de neón */
+    box-shadow: 0 0 10px #00ffff; /* Sombra de neón */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 60%;
+    margin-left: 0%;
+    margin-bottom: 1%;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffff;
+  }
+  .project-card #buy-sell-app {
+    background: url('imagenes/ServiceNow.jpg'); /* Reemplaza con la imagen de tu proyecto de compraventa */
+    background-size: cover;
+  }
+  
+  .project-content {
+    padding: 15px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejorar la legibilidad */
+  }
+  
+  .project-content h3 {
+    margin-top: 0;
+  }
+  
+  .project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #00ffff;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-link:hover {
+    background: #008b8b;
+  }
+  .projects-title{
+    color: #add8e6;
+    text-shadow: 0 0 8px #ffffff;
+    font-weight: bold;
+    position: relative;
+    top: calc(50%); /* Ajusta la posición según tus necesidades */
+    left: 40%; /* Puedes ajustar la posición horizontal si es necesario */
+    width: 50%;
+    height: fit-content;
+    font-size: 600%; /* Tamaño de fuente de ejemplo */
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 5%;
+  }
+
+
+
+
+
+
+
+

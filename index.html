@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio David Lozano</title>
+        <style>
+            body {
+                background-image: url('imagenes/fondo.png');
+                background-size: 1;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Mukta:wght@600&display=swap" rel="stylesheet">
+
+        <script>
+            function smoothScrollTo(elementId) {
+                const element = document.getElementById(elementId);
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            function cambiarTamanio(elementoSeleccionado) {
+                 const divs = document.querySelectorAll('#contenedor .div');
+             const estaAmpliado = elementoSeleccionado.classList.contains('ampliar');
+
+                divs.forEach(div => {
+                    div.classList.remove('ampliar', 'reducir');
+                    let contentDiv = div.querySelector('div'); // Asumiendo que es el div de contenido
+                 contentDiv.style.display = 'block'; // Restablecer la visualización del contenido
+
+                 if (div === elementoSeleccionado) {
+                       if (!estaAmpliado) {
+                         div.classList.add('ampliar');
+                      }
+                 } else {
+                       div.classList.add('reducir');
+                      contentDiv.style.display = 'none'; 
+                  }
+             });
+            }
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <div class="banner">
+            <div class="nombre" onclick="smoothScrollTo('content')">David . L</div>
+            <div class="botones">
+                <button onclick="smoothScrollTo('aboutMe')">About Me</button>
+                <button onclick="smoothScrollTo('experience')">Experience</button>
+                <button onclick="smoothScrollTo('projects')">Projects</button>
+                <div class="dropdown">
+                    <button class="dropbtn">Contact</button>
+                    <div class="dropdown-content">
+                        <a href="https://www.linkedin.com/in/david-lozano-69243526b/" target="_blank">LinkedIn</a>
+                        <a href="mailto:davidlozanoencabo@gmail.com" target="_blank">Correo Electrónico</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="content">
+            <div class="presentation">
+                I'm David Lozano.
+            </div>
+            <div class="presentation2">
+                Software Developer <br>
+            </div>
+            <div class = "AMbutton">
+                <a href="#aboutMe" class="about-button">&#9660;</a>
+                <button class="down-arrow" onclick="smoothScrollTo('aboutMe')">↓</button>
+            </div>
+            
+            
+        </div>
+
+        <div id="aboutMe" class="aboutMe">
+           <div class="aboutTitle">About Me</div>
+           <div class = "description">
+            Hello! I'm a young and passionate Software Developer with a strong focus on backend development.
+             My love for programming and cutting-edge technologies drives my continuous pursuit of knowledge and innovation.<br><br>
+             Currently, I am a part of the talented team at DXC Technologies, where I am actively contributing to the ServiceNow practice. 
+             With a keen eye for optimizing processes and enhancing efficiency, I'm dedicated to creating robust and scalable solutions that make a real difference.<br><br>
+             My journey into the world of software development began with a fascination for problem-solving and a desire to build systems that simplify complex tasks.
+              Over the years, I've honed my skills in various programming languages and technologies, always eager to explore new horizons.<br><br>
+              I thrive on challenges and am always up for learning and adapting to emerging technologies. 
+              Whether it's diving into the intricacies of a new framework or finding innovative solutions to intricate problems, I relish every opportunity to expand my skill set.<br><br>
+              Outside of coding, you'll often find me exploring the latest developments in the tech world, attending tech meetups, and engaging in coding projects that push the boundaries of what's possible.<br><br>
+              Let's connect and share our passion for software development and technology. I'm excited to learn, collaborate, and contribute to the ever-evolving landscape of software engineering.
+           </div>
+        </div>
+        <div id="experience" class="experience">
+            <div id="contenedor" class="contenedor">
+                <div class="div" id="div1" onclick="cambiarTamanio(this)" >Practice
+                    <div class="practiceDiv" id="practiceDiv">
+                        Once I completed my studies in Multiplatform Application Development (DAM), 
+                        I carried out my internship at DXC Technology, where I experienced the professional world for the first time.<br><br>
+                        During the internship, I underwent a training course in ServiceNow called <i>'ServiceNow fundamentals'</i>, which taught the basics of the platform. While taking the course and completing assigned tasks, 
+                        I was able to put my teamwork skills to the test and successfully complete them all.<br><br>
+                        In the last month of the internship, we were assigned a team project, which involved developing a buying and selling app within ServiceNow (click here to see). 
+                        After overcoming all the challenges associated with software development, my colleagues and I were able to deliver excellent work with the app and successfully complete the task.<br><br>
+                        Looking back to the past, I can assure you that the internship allowed me to grow both professionally and personally, giving me a better perspective on software development and its ecosystem.
+                    </div>
+                </div>
+                <div class="div" id="div2" onclick="cambiarTamanio(this)">DXC Technology
+                    <div class="practiceDiv" id="DXCdiv">
+                        Currently, I am working at DXC Technology, which decided to hire me after my internship.<br><br>
+                        Over these months, both the company and I have invested in my personal development through obtaining the certifications mentioned on the following slide page.
+                         I have also gained a solid background in software testing, work methodology, and teamwork.<br><br>
+                         My role in the company involves development in the ServiceNow tool.
+                    </div>
+                </div>
+                <div class="div" id="div3" onclick="cambiarTamanio(this)">Certifications
+                    <div class="practiceDiv" id="CertificationsDiv">
+                        Quick Overview about my Certifications:<br><br>
+                        -ServiceNow Certified System Administrator <a href="https://www.servicenow.com/services/training-and-certification/certified-system.html?state=seamless" target="_blank"><u>view</u></a><br>
+                        -ServiceNow Micro-Certification - Predictive Intelligence <a href="https://www.servicenow.com/products/predictive-intelligence.htmls" target="_blank"><u>view</u></a><br>
+                        -ServiceNow Micro-Certification - Virtual Agent <a href="https://www.servicenow.com/products/virtual-agent.html" target="_blank"><u>view</u></a><br>
+                        -ServiceNow Micro-Certification - Integration Hub <a href="https://www.servicenow.com/products/integration-hub.html" target="_blank"><u>view</u></a><br>
+                        -ServiceNow Micro-Certification - Performance Analytics <a href="https://www.servicenow.com/products/performance-analytics.html" target="_blank"><u>view</u></a><br>
+                        -Partner Pre-sales Specialization: Technology
+                        <div class="slider_frame">
+                            <ul>
+                                <li><img src="CSA.png" alt=""></li>
+                                <li><img src="Integration.png" alt=""></li>
+                                <li><img src="Performance.png" alt=""></li>
+                                <li><img src="Predictive.png" alt=""></li>
+                                <li><img src="Presales.png" alt=""></li>
+                                <li><img src="VirtualAgent.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="projects" class="Projects">
+            <div class="projects-title">
+                Projects
+            </div>
+            <div class="project-card" id="camping-app">
+              <div class="project-content">
+                <h3>CampAnalitycs</h3>
+                <p>A mobile application developed in Kotlin for the management of camps that was delivered as a final degree project.</p>
+                <a href="#" class="project-link">Ver Más</a>
+              </div>
+            </div>
+            <div class="project-card" id="buy-sell-app">
+              <div class="project-content">
+                <h3>Buying and selling application for games and movies.</h3>
+                <p>A small buying and selling application developed within ServiceNow.</p>
+                <a href="#" class="project-link">Ver Más</a>
+              </div>
+            </div>
+          </div>          
+    </body>
+</html>
